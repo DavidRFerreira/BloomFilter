@@ -127,7 +127,7 @@ where
 
 ## Implementation Notes
 
-This implementation uses the [**Hasher**](https://developer.apple.com/documentation/swift/hasher) structur available in Swift since version 4.2. This reduces multiple hashes to a single hash in an efficient way. This Hasher uses a seed in order to ensure that the results will not collide. This is an alternative to hash an element with multiple different hash functions or to hash it with the same function but adding random numbers.
+This implementation uses the [**Hasher**](https://developer.apple.com/documentation/swift/hasher) structure available in Swift since version 4.2. This reduces multiple hashes to a single hash in an efficient way. This Hasher uses a seed in order to ensure that the results will not collide. This is an alternative to hash an element with multiple different hash functions or to hash it with the same function but adding random numbers.
 
 This implementation provides the next methods: 
 
