@@ -127,7 +127,7 @@ where
 
 ## Implementation Notes
 
-This implementation uses the [**Hasher**](https://developer.apple.com/documentation/swift/hasher) structure available in Swift since version 4.2. This reduces multiple hashes to a single hash in an efficient way. This Hasher uses a seed in order to ensure that the results will not collide. This is an alternative to hash an element with multiple different hash functions or to hash it with the same function but adding random numbers.
+This implementation uses the [**Hasher**](https://developer.apple.com/documentation/swift/hasher) structure available in Swift since version 4.2. This reduces multiple hashes to a single hash in an efficient way. This Hasher uses a seed in order to ensure that the results will not collide. This is an alternative to hashing an element with multiple different hash functions or to hash it with the same function but adding random numbers.
 
 This implementation provides the next methods: 
 
@@ -168,4 +168,5 @@ false
 
 ## Further Readings
 Medjedovic, D., & Tahirovic, E. (2021). Algorithms and Data Structures for Massive Datasets. Manning Publications.
+
 Almeida, P., Baquero, C., Preguiça, N., & Hutchison, D. (2007). Scalable Bloom Filters. Information Processing Letters, Volume 101, Issue 6.
