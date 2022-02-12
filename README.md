@@ -12,21 +12,15 @@ Implemented operations:
 ## Table of Contents 
 1. [Brief Explanation of Bloom Filters](#installation)
     1. [Advantages](#advantages) 
-    2. [Disadvantages]
-    3. [Applications]
-    4. [Implementation Overview]
-    5. []
-2. [Usage Examples](#usage)
-    1. [Example 1: Single Query](#example1)
-    2. [Example 2: Multiple Queries](#example2)
-4. [Evaluation in Information Retrieval Briefly Explained](#explanation)
-    1. [Precision and Recall](#precision-recall)
-    2. [Average Precision](#ap)
-    3. [Mean Average Precision](#map)
-    4. [Precision-Recall Curves](#curves)
-    5. [Practical Example](#practical-example)
-    6. [Further Reading](#further-reading)
-
+    2. [Disadvantages](#disadvantages)
+    3. [Applications](#applications)
+    4. [Implementation Overview](#implementation-overview)
+        1. [Insertion and Verification](#insertion-and-verification)
+        2. [Optimal Number of Hash Functions](#optimal-number-of-hash-functions)
+        3. [Probability of False Positives](#probability-of-false-positives)
+2. [Implementation Notes](#implementation-notes)
+3. [Usage Example](#usage-example)
+4. [References](#further-readings)
 
 
 <a name="explanation"/>
@@ -72,7 +66,9 @@ A Bloom Filter can be used in many different situations. Some of these applicati
 
 ### Implementation Overview
 
-#### Addition and Insertion
+<a name="Insertion"/>
+
+#### Insertion and Verification
 
 A Bloom filter is essentialy an array that stores 0s and 1s. After we create a Bloom Filter and before inserting any element, all m positions are set to 0. 
 
@@ -120,7 +116,7 @@ where
 We can compute the probability of false positives ocurring, with
 
 ```
-P = ( 1 - [1 - 1 / m]^kn )^k
+P = pow(1 - exp(-k / (m / n)), k)
 ```
 where
 - m is the size of the bit array,
@@ -160,7 +156,7 @@ print(bloomFilter.contains(value: "bloom1"))
 print(bloomFilter.isEmpty())
 ```
 
-Output:
+**Output:**
 ```
 0.5756271543230502
 true
