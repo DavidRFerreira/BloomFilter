@@ -10,7 +10,7 @@ Implemented operations:
 - Compute the optimal number of hashes to apply to an element. 
 
 ## Table of Contents 
-1. [Brief Explanation of Bloom Filters](#installation)
+1. [Brief Explanation of Bloom Filters](#explanation)
     1. [Advantages](#advantages) 
     2. [Disadvantages](#disadvantages)
     3. [Applications](#applications)
