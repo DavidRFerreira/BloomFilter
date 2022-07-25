@@ -72,23 +72,31 @@ A Bloom Filter can be used in many different situations. Some of these applicati
 
 A Bloom filter is essentialy an array that stores 0s and 1s. After we create a Bloom Filter and before inserting any element, all m positions are set to 0. 
 
+```
 | 0 | 0 | 0 | 0 | 0 | ... | 0 |
+```
 
 When we want to add an element to the Bloom Filter, we hash that element with k hash functions. After we get k integer hash values, we set the filter's positions with index equal to those k hash values to 1 % m (size of the filter).
 
 For example, we want to **insert** the word "bloom" on a Bloom Filter of size 10. We can pass it through 3 hash functions:
+```
 - h1("bloom") = 101
 - h2("bloom") = 47
 - h3("bloom") = 13
+```
 
 We then check the index of the positions to set to 1: 
+```
 - 101 % 10 = 1
 - 47 % 10 = 7
 - 13 % 10 = 3
+```
 
 So, we add the "bloom" word by setting to 1 the positions 1, 3 and 7.
 
+```
 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+```
 
 Now, if we want to check if the Bloom Filter contains the "bloom" word, we hash it like we did to add it in the first place and check if those positions are set to one. 
 
